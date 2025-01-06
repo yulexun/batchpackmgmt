@@ -1,0 +1,11 @@
+Package: bulkpackmgmt
+Title: Automated Installation, Loading or Uninstallation of R Libraries in library() function
+Version: 0.0.0.9000
+Authors@R: 
+    person("Lexun", "Yu", , "lyu@prpr.one", role = c("aut", "cre")
+           )
+Description: This package provides automated management for install, load and uninstall R packages specified in library() functions within the headers of .R, .Rmd or .qmd files. It detects the packages listed, checks whether they are installed, and offers prompts to install, load, or uninstall them in bulk. 
+License: use_mit_license()
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
