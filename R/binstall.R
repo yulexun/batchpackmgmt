@@ -48,7 +48,21 @@ binstall <- function(librarylines) {
     
     if (tolower(install_response) %in% c("yes", "y")) {
       message("Installing missing packages...")
-      install.packages(missing_packages)
+      for (package in missing_packages) {
+        tryCatch(
+          {
+            message("Installing package: ", package)
+            install.packages(package)
+            message("Package '", package, "' installed successfully.")
+          },
+          warning = function(w) {
+            message("Warning during installation of '", package, "': ", conditionMessage(w))
+          },
+          error = function(e) {
+            message("Error during installation of '", package, "': ", conditionMessage(e))
+          }
+        )
+      }
       message("Installation complete.")
     } else {
       message("Skipping installation.")
@@ -66,6 +80,8 @@ binstall <- function(librarylines) {
     message("Skipping package loading.")
   }
 }
+
+
 #` Batch Uninstall R Packages
 #' This function uninstalls multiple R packages based on a list of library() declarations. It extracts 
 #' package names from the provided lines of R code, checks for packages that are currently installed, 
