@@ -35,7 +35,7 @@ binstall <- function(librarylines) {
   installed_packages <- package_list[(package_list %in% installed.packages()[, "Package"])]
   
   if (length(missing_packages) > 0) {
-    # Ask the user if they want to install the missing packages
+    # Ask the user to install the missing packages
     message("The following packages are installed: \n   - ", paste(installed_packages, collapse = "\n   - "))
     message("The following packages are missing: \n   - ", paste(missing_packages, collapse = "\n   - "))
     install_response <- readline(prompt = "Do you want to install the missing packages? (y/n): ")
@@ -51,7 +51,7 @@ binstall <- function(librarylines) {
     message("All packages are already installed.")
   }
   
-  # Ask the user if they want to load the packages
+  # Ask the user to load the packages
   load_response <- readline(prompt = "Do you want to load the packages now? (y/n): ")
   
   if (tolower(load_response) %in% c("yes", "y")) {
@@ -66,7 +66,7 @@ buninstall <- function(librarylines) {
     # Extract package names
     package_list <- extract_packages(librarylines)
   
-    # Identify installed packages from the provided list
+    # Identify installed packages from the list
     installed_packages <- package_list[package_list %in% installed.packages()[, "Package"]]
     
     if (length(installed_packages) > 0) {
@@ -74,11 +74,11 @@ buninstall <- function(librarylines) {
       message("The following packages are installed and can be uninstalled: \n   - ", 
               paste(installed_packages, collapse = "\n   - "))
       
-      # Ask the user if they want to uninstall these packages
+      # Ask the user to uninstall these packages
       uninstall_response <- readline(prompt = "Do you want to uninstall these packages? (y/n): ")
       
       if (tolower(uninstall_response) %in% c("yes", "y")) {
-        # Uninstall each package
+        # Uninstall every package
         sapply(installed_packages, function(pkg) {
           message("Uninstalling package: ", pkg)
           remove.packages(pkg)
