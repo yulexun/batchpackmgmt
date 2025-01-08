@@ -14,7 +14,6 @@ extract_packages <- function(lines) {
   return(package_names)
 }
 
-# Function to load packages
 bload <- function(package_list) {
   # Load all packages
   invisible(sapply(package_list, function(pkg) {
@@ -25,7 +24,14 @@ bload <- function(package_list) {
   message("All packages are loaded.")
 }
 
-# Function to install packages
+#' Batch Install and Load R Packages
+#'
+#' This function install and load multiple R packages from a list of library declarations. It extracts 
+#' package names from a given set of library() calls, checks for packages that are already installed and 
+#' identifies those that are missing. If any packages are missing, it prompt the user for insallation 
+#' and loading.
+#'
+#' @param librarylines A string containing lines of R code with library() calls.
 #' @export
 binstall <- function(librarylines) {
   # Extract package names
@@ -60,7 +66,13 @@ binstall <- function(librarylines) {
     message("Skipping package loading.")
   }
 }
-
+#` Batch Uninstall R Packages
+#' This function uninstalls multiple R packages based on a list of library() declarations. It extracts 
+#' package names from the provided lines of R code, checks for packages that are currently installed, 
+#' and identifies those that can be uninstalled. If any packages are installed, the function prompts 
+#' the user for confirmation before proceeding with the uninstallation.
+#'
+#' @param librarylines A string containing lines of R code with library() calls.
 #' @export
 buninstall <- function(librarylines) {
     # Extract package names
