@@ -1,4 +1,4 @@
-Package: batchpackmgmt
+Package: bulkpkginstall
 Title: Automated Installation, Loading or Uninstallation of R Packages in Source File
 Version: 0.0.0.9000
 Authors@R: 
