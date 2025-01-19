@@ -1,4 +1,4 @@
-# Bulk Package Install
+# Batch Package Install
 
 This R package simplifies the process of managing multiple R packages with functions to extract, install, load, and uninstall packages in bulk based on library() calls. 
 
@@ -64,5 +64,5 @@ buninstall(library_lines)
 
 ## License
 
-This project is licensed under the MIT License. See the [`LICENSE.txt`](https://github.com/yulexun/bulkpkginstall/blob/main/LICENSE.txt) file for details.
+This project is licensed under the MIT License. See the [`LICENSE.txt`](https://github.com/yulexun/batchpkginstall/blob/main/LICENSE.txt) file for details.
 
