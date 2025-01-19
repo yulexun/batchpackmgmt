@@ -64,5 +64,5 @@ buninstall(library_lines)
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE.txt` file for details.
+This project is licensed under the MIT License. See the [`LICENSE.txt`](https://github.com/yulexun/bulkpkginstall/blob/main/LICENSE.txt) file for details.
 
